@@ -24,15 +24,17 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  delay(2000);
+  
   float hum = dht.readHumidity();
- 
-  if (isnan(hum )) {
+  float temp = dht.readTemperature();
+  if (isnan(hum || temp)) {
   Serial.println("Error: Failed to read hum");
   return;
   }
   Serial.print(hum);
   Serial.println();
- 
+  tm1637.display(temp);
+  delay(5000);
   tm1637.display(hum);
+  delay(5000);
   }
