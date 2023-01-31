@@ -1,4 +1,7 @@
+
 #include <TM1637.h>
+
+
 
 #include <DHT.h>
 #include <DHT_U.h>
@@ -17,7 +20,7 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   tm1637.init();
-  tm1637.setBrightness(6);
+  tm1637.setBrightness(10);
   dht.begin();
   
 }
@@ -37,4 +40,5 @@ void loop() {
   delay(5000);
   tm1637.display(hum);
   delay(5000);
+
   }
